@@ -18,6 +18,8 @@ services:
       - ./fibertime_fe/package-lock.json:/app/package-lock.json
       - fe-next:/app/.next
       - fe-modules:/app/node_modules
+    ports:
+      - 3000:3000
     networks:
       - fibertime-net
 
@@ -25,6 +27,8 @@ services:
     build:
       context: ./fibertime_be
       dockerfile: ./Dockerfile
+    ports:
+      - 3001:3001
     networks:
       - fibertime-net
 
